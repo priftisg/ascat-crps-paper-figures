@@ -1,0 +1,23 @@
+% Auto-generated from SI_tab_permutation.csv — digits copied verbatim from CSV.
+% Source: evaluation/explainability/crps/13_predictor_group_permutation.csv
+\begin{table}[htbp]
+\centering
+\caption{Predictor-group permutation importance on the ASCAT-A validation
+sample used for Fig.~\ref{fig:explainability}c ($n=40$ swath halves;
+fixed latent seeds). Values are changes relative to the unperturbed
+baseline; positive values indicate degradation in predictive performance.
+Baseline afCRPS $=0.006025998127581029$; baseline Brier $=0.00485630002767306$.
+All digits are copied from the machine-readable table
+\texttt{SI\_tab\_permutation.csv}.}
+\label{tab:si_permutation}
+\begin{tabular}{lcc}
+\toprule
+Predictor group & $\Delta$afCRPS & $\Delta$Brier \\
+\midrule
+Smooth wind context ($U$, $|\nabla U|$) & $+0.03815644820608599$ & $+0.00966971874226391$ \\
+Rain / retrieval QC & $+0.03196630530970533$ & $+0.008596426527983998$ \\
+$N_{\mathrm{amb}}$ & $+0.01890569752066945$ & $+0.015046991054192223$ \\
+Ambiguity winds / SOS & $+0.015380771553790654$ & $+0.013772426016890625$ \\
+\bottomrule
+\end{tabular}
+\end{table}

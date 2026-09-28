@@ -1,0 +1,11 @@
+{
+  "comment": "Copy to configs/paths.json and edit. Or set the same keys as environment variables.",
+  "ASCAT_CRPS_ROOT": "/path/to/full_swath_unet_CRPS",
+  "GPKG_ROOT": "/path/to/evaluation/fullswath/crps",
+  "CHECKPOINT": "/path/to/models/unet_crps/crps_ensemble_best.pt",
+  "OVERPASS_CLIM": "/path/to/occurrence_climatology",
+  "ZENODO_CRPS_EXTRACT": "/path/to/ascat_crps_v1",
+  "ZENODO_GRID_EXTRACT": "/path/to/gridded_cold_pools_compressed",
+  "EXPLAIN_CACHE": "/path/to/evaluation/explainability/crps",
+  "SHARE_PACK": "/path/to/evaluation/Garg_explainability/share_pack_v1"
+}

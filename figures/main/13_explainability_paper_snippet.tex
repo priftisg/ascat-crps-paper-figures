@@ -1,0 +1,25 @@
+\subsection{Learned Representations and Model Explainability}
+
+To assess what the CRPS ensemble U-Net learns from the 19 ASCAT predictors and
+stochastic latent input, Fig.~\ref{fig:explainability} combines bottleneck
+representation analysis, predictor-group permutation with uncertainty,
+spatial attribution, and ensemble coherence.
+Bottleneck features (fixed latent draw) reduced by PCA separate high
+exceedance-probability pixels from background and organize ambiguity count
+$N_{\mathrm{amb}}$ along distinct directions of the embedding
+(Fig.~\ref{fig:explainability}a,b).
+Along-track permutation of predictor groups shows that
+$N_{\mathrm{amb}}$ and ambiguity winds/SOS contribute most to the exceedance
+Brier score at $\tau^*=1.2\times10^{-4}$, exceeding smooth wind context, with
+uncertainties small relative to group differences
+(Fig.~\ref{fig:explainability}c); corresponding afCRPS permutation numbers are
+retained in the Supporting Information.
+Integrated gradients on a representative orbit attribute high $P(S>\tau^*)$ to
+coherent gust-front-scale structure rather than isolated retrieval artifacts
+(Fig.~\ref{fig:explainability}d).
+Member-difference correlation lengths of ensemble deviations concentrate near
+5--6~pixels, at the latent-grid spacing rather than at long front-scale modes
+(Fig.~\ref{fig:explainability}e).
+Additional PCA colorings, the full IG case set, and latent $z$-traversal
+examples are provided in the Supporting Information
+(Figs.~\ref{fig:si-explain-pca}--\ref{fig:si-explain-ig-share}).

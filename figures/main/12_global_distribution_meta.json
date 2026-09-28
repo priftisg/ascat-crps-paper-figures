@@ -1,0 +1,35 @@
+{
+  "tau": 0.00012,
+  "p_star": 0.325,
+  "year_start": 2007,
+  "year_end": 2025,
+  "n_objects": 6451112,
+  "n_gpkg_files": 398,
+  "area_median_km2": 2519.4238679055225,
+  "area_mean_km2": 6848.923779161982,
+  "normalization": "object_centroids / ASCAT_overpass_count * 100",
+  "overpass_source": {
+    "sources": [
+      {
+        "series": "ascat_a",
+        "year_start": 2007,
+        "year_end": 2021,
+        "n_overpass_swaths": 75654
+      },
+      {
+        "series": "ascat_b",
+        "year_start": 2012,
+        "year_end": 2025,
+        "n_overpass_swaths": 63341
+      },
+      {
+        "series": "ascat_c",
+        "year_start": 2019,
+        "year_end": 2025,
+        "n_overpass_swaths": 31315
+      }
+    ],
+    "n_overpass_swaths": 170310
+  },
+  "note": "Overpass denominators from REMSS coverage grids (multiamb occurrence climatology checkpoints); numerators from CRPS density-matched GPKGs."
+}

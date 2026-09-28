@@ -1,0 +1,42 @@
+{
+  "crps": 0.005637965143349982,
+  "spread_skill": 1.096449775735684,
+  "spread": 0.007743744018458955,
+  "rmse": 0.00706256154164758,
+  "rank_chi2": 2845424.783213459,
+  "rank_counts": [
+    22381276,
+    16116784,
+    17649587,
+    19146128,
+    19262387,
+    17977014,
+    16056004,
+    14532922,
+    14806254
+  ],
+  "rank_freq": [
+    0.14171790656770972,
+    0.10205123644800052,
+    0.11175692223377542,
+    0.12123299757517897,
+    0.12196914783308452,
+    0.11383018512520957,
+    0.10166637839249083,
+    0.09202224583405402,
+    0.09375297999049645
+  ],
+  "n_rank_pixels": 157928356,
+  "n_halves": 7915,
+  "n_orbits": 3958,
+  "members": 8,
+  "alpha": 0.95,
+  "peak": 4.0,
+  "checkpoint": "/rstor/gpriftis/ascat-cold-pool-identification/full_swath_unet_CRPS/models/unet_crps/crps_ensemble_best.pt",
+  "val_orbit_start": 72001,
+  "val_orbit_end": 76000,
+  "limit": null,
+  "stride": 1,
+  "elapsed_sec": 2876.613851070404,
+  "note": "Field scores on Sobel-WGM target (normalized). spread_skill\u22481 and flat rank hist = calibrated ensemble."
+}

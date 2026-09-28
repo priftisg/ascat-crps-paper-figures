@@ -1,0 +1,5 @@
+# PyTorch: install the CUDA build matching your cluster, then:
+-r requirements-cpu.txt
+torch>=2.0
+torchvision>=0.15
+scikit-image>=0.20

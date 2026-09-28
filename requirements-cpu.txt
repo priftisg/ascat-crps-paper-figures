@@ -1,0 +1,10 @@
+numpy>=1.23
+scipy>=1.10
+pandas>=1.5
+matplotlib>=3.7
+scikit-learn>=1.2
+netCDF4>=1.6
+xarray>=2023.1
+# Geo / maps (install via conda recommended for Cartopy/PROJ):
+#   conda install -c conda-forge geopandas cartopy
+geopandas>=0.13

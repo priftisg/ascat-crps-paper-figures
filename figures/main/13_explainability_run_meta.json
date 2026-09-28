@@ -1,0 +1,42 @@
+{
+  "parts": [
+    "ig",
+    "latent",
+    "permute"
+  ],
+  "n_orbits": 20,
+  "members": 8,
+  "tau": 0.00012,
+  "seed": 0,
+  "elapsed_s": 774.8376951217651,
+  "device": "cpu",
+  "predictor_groups": {
+    "smooth_context": [
+      "wind_speed_smooth",
+      "wind_gradient_smooth"
+    ],
+    "rain_qc": [
+      "rad_rain",
+      "rain_flag",
+      "iclass",
+      "valid_mask"
+    ],
+    "numamb": [
+      "numamb_norm"
+    ],
+    "ambiguity_winds": [
+      "u_amb1",
+      "v_amb1",
+      "sos_amb1",
+      "u_amb2",
+      "v_amb2",
+      "sos_amb2",
+      "u_amb3",
+      "v_amb3",
+      "sos_amb3",
+      "u_amb4",
+      "v_amb4",
+      "sos_amb4"
+    ]
+  }
+}

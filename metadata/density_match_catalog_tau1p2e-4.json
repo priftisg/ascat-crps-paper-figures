@@ -1,0 +1,10 @@
+{
+  "tau": 0.00012,
+  "tau_index": 3,
+  "p_star": 0.325,
+  "matched_rate": 50.61125,
+  "gf_rate_target": 49.57,
+  "n_stacks": 800,
+  "min_area": 4,
+  "_comment_infer_out": "Set at runtime from config infer_out; not required for reading OP values."
+}

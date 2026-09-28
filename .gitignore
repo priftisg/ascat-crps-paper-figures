@@ -1,0 +1,30 @@
+# Large science data — use Zenodo / local paths
+*.nc
+*.nc4
+*.gpkg
+*.pt
+*.pth
+*.npz
+*.h5
+*.mat
+Processed_Swaths/
+**/Processed_Swaths/
+
+# Caches and intermediates
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# Local path overrides
+configs/paths.json
+.env
