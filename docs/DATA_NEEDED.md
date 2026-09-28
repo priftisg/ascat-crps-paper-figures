@@ -20,7 +20,7 @@ For scripts that still expect the live layout
 
 ## Research checkout (`ASCAT_CRPS_ROOT`)
 
-Set to the `full_swath_unet_CRPS` project root if regenerating GPU figures:
+Set to your local ASCAT CRPS research checkout root if regenerating GPU figures:
 
 | Path under root | Used by |
 |-----------------|---------|
@@ -36,8 +36,7 @@ Set to the `full_swath_unet_CRPS` project root if regenerating GPU figures:
 ## Overpass climatology (Fig. 12)
 
 Directory of REMSS-based overpass grids used as the detection-frequency
-denominator. Set `OVERPASS_CLIM`. On the authors’ cluster this historically lived
-under a sibling cold-pool project’s `evaluation/figures/occurrence_climatology`.
+denominator. Set `OVERPASS_CLIM` to that directory on your machine.
 
 ## What is intentionally excluded from git
 

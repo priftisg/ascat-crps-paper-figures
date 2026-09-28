@@ -2,13 +2,13 @@
 # Create the public GitHub repo and push this directory (run once).
 #
 # Prerequisites:
-#   mamba run -n ghcli gh auth login    # or: export PATH=.../envs/ghcli/bin:$PATH
-#   SSH key already works (git@github.com authenticates as priftisg)
+#   Install GitHub CLI (gh) and authenticate:
+#     gh auth login -h github.com -p ssh -w
+#   SSH access to GitHub must work for your account.
 #
 # Usage (from this directory):
 #   bash push_to_github.sh
 set -euo pipefail
-export PATH="${HOME}/conda/envs/ghcli/bin:/nas/rhome/gpriftis/conda/envs/ghcli/bin:${PATH}"
 
 REPO_NAME="${REPO_NAME:-ascat-crps-paper-figures}"
 OWNER="${OWNER:-priftisg}"
@@ -16,9 +16,14 @@ VISIBILITY="${VISIBILITY:-public}"
 
 cd "$(dirname "$0")"
 
+if ! command -v gh >/dev/null 2>&1; then
+  echo "gh (GitHub CLI) not found on PATH. Install it, then re-run." >&2
+  exit 1
+fi
+
 if ! gh auth status >/dev/null 2>&1; then
   echo "gh is not authenticated. Run:"
-  echo "  mamba run -n ghcli gh auth login -h github.com -p ssh -w"
+  echo "  gh auth login -h github.com -p ssh -w"
   exit 1
 fi
 

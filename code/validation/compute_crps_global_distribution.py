@@ -13,9 +13,8 @@ numerators/areas come from CRPS GPKGs.
 
 Example
 -------
-  env -u PYTHONPATH -u LD_LIBRARY_PATH \\
-    /rhome/gpriftis/miniconda3/envs/impact/bin/python \\
-    validation/compute_crps_global_distribution.py
+  python code/validation/compute_crps_global_distribution.py \\
+      --gpkg-root \"$GPKG_ROOT\" --overpass-dir \"$OVERPASS_CLIM\"
 """
 
 from __future__ import annotations
@@ -397,7 +396,7 @@ def main():
     p.add_argument("--min-overpasses", type=int, default=20)
     p.add_argument(
         "--pack-dir",
-        default=str(ROOT / "evaluation/paper_revision_pack_crps_ensemble/01_figures"),
+        default=str(ROOT / "figures/main"),
     )
     args = p.parse_args()
 

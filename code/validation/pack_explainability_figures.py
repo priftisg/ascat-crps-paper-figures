@@ -18,13 +18,10 @@ SI:
 
 Example
 -------
-  source slurm_env.sh && setup_pytorch_env
-  "$PYTHON" validation/pack_explainability_figures.py --force-ig
+  python code/validation/pack_explainability_figures.py --force-ig
 
-For coastlines on geo panels (Cartopy), prefer the impact env after IG caches exist:
-  env -u PYTHONPATH -u LD_LIBRARY_PATH \\
-    /rhome/gpriftis/miniconda3/envs/impact/bin/python \\
-    validation/pack_explainability_figures.py
+For coastlines on geo panels, use an environment with Cartopy after IG caches exist:
+  python code/validation/replot_ig_geo_cartopy.py
 """
 
 from __future__ import annotations
@@ -36,9 +33,9 @@ import sys
 from pathlib import Path
 
 try:
-    from paths_config import ensure_sys_path, get, research_root
+    from paths_config import ensure_sys_path, figures_repo_root, get, research_root
 except ImportError:
-    from code.paths_config import ensure_sys_path, get, research_root  # type: ignore
+    from code.paths_config import ensure_sys_path, figures_repo_root, get, research_root  # type: ignore
 
 import matplotlib
 
@@ -405,14 +402,14 @@ def main():
     ap.add_argument("--outdir", default=str(ROOT / "evaluation" / "explainability" / "crps"))
     ap.add_argument(
         "--pack-dir",
-        default=str(ROOT / "evaluation" / "paper_revision_pack_crps_ensemble" / "01_figures"),
+        default=str(Path(get("FIGURES_MAIN") or str(figures_repo_root() / "figures" / "main"))),
     )
     ap.add_argument(
         "--si-dir",
         default=str(
-            ROOT / "evaluation" / "paper_revision_pack_crps_ensemble" / "05_member_sensitivity"
+            Path(get("FIGURES_SI") or str(figures_repo_root() / "figures" / "si"))
         ),
-        help="Default SI landing zone; explainability SI files go to 07_explainability_si",
+        help="SI landing zone for explainability supplementary panels",
     )
     ap.add_argument("--members", type=int, default=None)
     ap.add_argument("--limit", type=int, default=20)
@@ -436,7 +433,7 @@ def main():
     if not pack_fig.is_absolute():
         pack_fig = ROOT / pack_fig
     pack_fig.mkdir(parents=True, exist_ok=True)
-    si_dir = ROOT / "evaluation" / "paper_revision_pack_crps_ensemble" / "07_explainability_si"
+    si_dir = Path(get("FIGURES_SI") or str(figures_repo_root() / "figures" / "si"))
     si_dir.mkdir(parents=True, exist_ok=True)
 
     ensure_latent(outdir, args)

@@ -2,11 +2,9 @@
 """
 Replot IG explainability panels from cached geo NPZs with Cartopy coastlines.
 
-Does not need torch — run in the impact env after IG caches exist:
+Does not need torch — run in a Cartopy-enabled environment after IG caches exist:
 
-  env -u PYTHONPATH -u LD_LIBRARY_PATH \\
-    /rhome/gpriftis/miniconda3/envs/impact/bin/python \\
-    validation/replot_ig_geo_cartopy.py
+  python code/validation/replot_ig_geo_cartopy.py
 """
 
 from __future__ import annotations
@@ -17,9 +15,9 @@ import sys
 from pathlib import Path
 
 try:
-    from paths_config import ensure_sys_path, get, research_root
+    from paths_config import ensure_sys_path, figures_repo_root, get, research_root
 except ImportError:
-    from code.paths_config import ensure_sys_path, get, research_root  # type: ignore
+    from code.paths_config import ensure_sys_path, figures_repo_root, get, research_root  # type: ignore
 
 import cartopy.crs as ccrs
 import matplotlib
@@ -195,11 +193,11 @@ def main():
     ap.add_argument("--outdir", default=str(ROOT / "evaluation" / "explainability" / "crps"))
     ap.add_argument(
         "--pack-dir",
-        default=str(ROOT / "evaluation" / "paper_revision_pack_crps_ensemble" / "01_figures"),
+        default=str(Path(get("FIGURES_MAIN") or str(figures_repo_root() / "figures" / "main"))),
     )
     ap.add_argument(
         "--si-dir",
-        default=str(ROOT / "evaluation" / "paper_revision_pack_crps_ensemble" / "07_explainability_si"),
+        default=str(Path(get("FIGURES_SI") or str(figures_repo_root() / "figures" / "si"))),
     )
     ap.add_argument("--ig-orbit-main", type=int, default=73598)
     ap.add_argument("--ig-orbits", default="73598,72850,75001")

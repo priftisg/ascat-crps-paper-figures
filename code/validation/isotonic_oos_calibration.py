@@ -11,8 +11,7 @@ Uses the common-opportunity forecasts from garg_followup_surfaces.py.
 
 Example
 -------
-  env -u PYTHONPATH /rhome/gpriftis/miniconda3/bin/python \\
-      validation/isotonic_oos_calibration.py \\
+  python validation/isotonic_oos_calibration.py \\
       --outdir evaluation/garg_followup/isotonic_oos
 """
 

@@ -6,5 +6,5 @@
   "gf_rate_target": 49.57,
   "n_stacks": 800,
   "min_area": 4,
-  "infer_out": "/nas/rstor/gpriftis/Data/ASCAT/ascat_a/FullSwath_Inferences/unet_crps"
+  "infer_out": "<INFER_OUT>/unet_crps"
 }

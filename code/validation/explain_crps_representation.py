@@ -18,7 +18,7 @@ Three complementary analyses for an AI-focused Results subsection:
 
 Example (smoke)
 ---------------
-  /rhome/gpriftis/miniconda3/envs/torch/bin/python \\
+  python \\
     validation/explain_crps_representation.py --limit 4 --ig-orbits 73598
 
 Full val (GPU recommended)
@@ -35,9 +35,9 @@ import time
 from pathlib import Path
 
 try:
-    from paths_config import ensure_sys_path, get, research_root
+    from paths_config import ensure_sys_path, figures_repo_root, get, research_root
 except ImportError:
-    from code.paths_config import ensure_sys_path, get, research_root  # type: ignore
+    from code.paths_config import ensure_sys_path, figures_repo_root, get, research_root  # type: ignore
 from typing import Dict, List, Optional, Sequence, Tuple
 
 import matplotlib
@@ -666,7 +666,7 @@ def run_integrated_gradients(
     if not _HAS_CARTOPY:
         print(
             "NOTE: cartopy not available — plotting lon/lat scatter without coastlines; "
-            "rerun plot step in the impact env for coastline overlays",
+            "rerun plot step in a Cartopy-enabled environment for coastline overlays",
             flush=True,
         )
 
@@ -889,7 +889,7 @@ def main():
     )
     ap.add_argument(
         "--pack-dir",
-        default=str(ROOT / "evaluation" / "paper_revision_pack_crps_ensemble" / "01_figures"),
+        default=str(Path(get("FIGURES_MAIN") or str(figures_repo_root() / "figures" / "main"))),
     )
     ap.add_argument("--members", type=int, default=None)
     ap.add_argument("--limit", type=int, default=20, help="Max val orbits for latent/permutation")

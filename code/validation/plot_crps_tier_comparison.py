@@ -5,16 +5,15 @@ Three-way swath maps: classical Garg | CRPS baseline OP | CRPS OP C.
 Makes the density-tiering visible so OP C does not look "sparse by bug"
 when compared against the full classical catalog (~50 vs ~16 objs/swath).
 
-Run with the impact env (Cartopy), clearing PYTHONPATH:
+Requires Cartopy. Example:
 
-  env -u PYTHONPATH -u LD_LIBRARY_PATH /rhome/gpriftis/miniconda3/envs/impact/bin/python \\
-      validation/plot_crps_tier_comparison.py \\
+  python code/validation/plot_crps_tier_comparison.py \\
       --orbits 72010,73598,75001,72850,74200 \\
-      --outdir evaluation/figures/crps_tier_comparison
+      --outdir /tmp/crps_tier_comparison
 
 Publication layout (no suptitle, shared colorbar, tight gaps):
 
-  ... --orbits 73598 --publication --outdir evaluation/paper_revision_pack_crps_ensemble/01_figures
+  ... --orbits 73598 --publication --pack-dir figures/main
 """
 
 from __future__ import annotations

@@ -15,8 +15,7 @@ separate script once the common set + p_max surface exist.
 
 Example
 -------
-  env -u PYTHONPATH /rhome/gpriftis/miniconda3/bin/python \\
-      validation/garg_followup_surfaces.py \\
+  python validation/garg_followup_surfaces.py \\
       --outdir evaluation/garg_followup
 """
 

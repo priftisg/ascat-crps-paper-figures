@@ -14,9 +14,7 @@ Optionally rebuilds a revised 4-panel main figure:
 
 Example
 -------
-  env -u PYTHONPATH -u LD_LIBRARY_PATH \\
-    /rhome/gpriftis/miniconda3/envs/impact/bin/python \\
-    validation/plot_explainability_panels_bd.py
+  python code/validation/plot_explainability_panels_bd.py
 """
 
 from __future__ import annotations
@@ -27,9 +25,9 @@ import sys
 from pathlib import Path
 
 try:
-    from paths_config import ensure_sys_path, get, research_root
+    from paths_config import ensure_sys_path, figures_repo_root, get, research_root
 except ImportError:
-    from code.paths_config import ensure_sys_path, get, research_root  # type: ignore
+    from code.paths_config import ensure_sys_path, figures_repo_root, get, research_root  # type: ignore
 from typing import Optional, Tuple
 
 import matplotlib
@@ -50,8 +48,9 @@ SHARE = (
 )
 _explain = get("EXPLAIN_CACHE")
 OUTDIR = Path(_explain) if _explain else ROOT / "evaluation/explainability/crps"
-PACK = ROOT / "evaluation/paper_revision_pack_crps_ensemble/01_figures"
-SI = ROOT / "evaluation/paper_revision_pack_crps_ensemble/07_explainability_si"
+_FIG = figures_repo_root()
+PACK = Path(get("FIGURES_MAIN") or str(_FIG / "figures" / "main"))
+SI = Path(get("FIGURES_SI") or str(_FIG / "figures" / "si"))
 
 PERM_ORDER = ["numamb", "ambiguity_winds", "smooth_context", "rain_qc"]
 PERM_LABELS = {

@@ -1,5 +1,7 @@
 #!/bin/bash
-# Usage: ASCAT_CRPS_ROOT=/path/to/full_swath_unet_CRPS bash code/run_with_env.sh validation/score_ensemble_field.py --limit 2
+# Usage:
+#   ASCAT_CRPS_ROOT=/path/to/research_checkout \
+#     bash code/run_with_env.sh code/validation/score_ensemble_field.py --limit 2
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 export PYTHONPATH="${HERE}/code${PYTHONPATH:+:$PYTHONPATH}"

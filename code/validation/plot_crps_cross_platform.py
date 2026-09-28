@@ -212,7 +212,7 @@ def main():
         "--pack-dir",
         default=str(
             ROOT
-            / "evaluation/paper_revision_pack_crps_ensemble/01_figures"
+            / "figures/main"
         ),
     )
     args = p.parse_args()

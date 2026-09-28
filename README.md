@@ -33,9 +33,9 @@ FIGURE_MANIFEST.md
 3. Copy `configs/paths.example.json` → `configs/paths.json` and edit, **or** export:
 
 ```bash
-export ASCAT_CRPS_ROOT=/path/to/full_swath_unet_CRPS
-export GPKG_ROOT=$ASCAT_CRPS_ROOT/evaluation/fullswath/crps
-export CHECKPOINT=$ASCAT_CRPS_ROOT/models/unet_crps/crps_ensemble_best.pt
+export ASCAT_CRPS_ROOT=/path/to/ascat_crps_research_checkout
+export GPKG_ROOT=/path/to/gpkg_root
+export CHECKPOINT=/path/to/crps_ensemble_best.pt
 export OVERPASS_CLIM=/path/to/occurrence_climatology
 export PYTHONPATH=/path/to/ascat-crps-paper-figures/code:$PYTHONPATH
 ```
@@ -59,8 +59,8 @@ or the stub `scripts_pack_to_figures.sh`.
 | Figures | Environment | Notes |
 |---------|-------------|-------|
 | 03–05, 09, 13 (GPU steps) | PyTorch CUDA venv | Forward passes / IG / latent PCA |
-| 10, 12 (maps) | Conda env with **Cartopy** | Often `impact` on our cluster |
-| 11, GPKG I/O | GeoPandas / py312 | SQLite GeoPackage reads |
+| 10, 12 (maps) | Conda/pip env with **Cartopy** | Map projections |
+| 11, GPKG I/O | GeoPandas | SQLite GeoPackage reads |
 | 01–02, 06–08 | CPU scipy/sklearn + matplotlib | Buoy CSV intermediates |
 
 CPU requirements: `requirements-cpu.txt`  
@@ -73,15 +73,13 @@ when using figures or regenerated products.
 
 ## Publishing this repository to GitHub
 
-Local git history is initialized on `main`. After authenticating the GitHub CLI once:
+From this repository root, after `gh auth login`:
 
 ```bash
-cd evaluation/ascat_crps_paper_figures
-mamba run -n ghcli gh auth login -h github.com -p ssh -w
 bash push_to_github.sh
 ```
 
-This creates the public repo `priftisg/ascat-crps-paper-figures` and pushes `main`.
+Creates the public GitHub repository and pushes `main`.
 
 ## License
 
