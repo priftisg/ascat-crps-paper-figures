@@ -18,4 +18,4 @@ abstract: >-
   Rendered manuscript figures and Python scripts to regenerate them for the
   ASCAT CRPS ensemble cold-pool identification study. Large input data are
   archived separately on Zenodo.
-repository-code: "https://github.com/gpriftis/ascat-crps-paper-figures"
+repository-code: "https://github.com/priftisg/ascat-crps-paper-figures"
