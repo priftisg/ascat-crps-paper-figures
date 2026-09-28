@@ -71,6 +71,18 @@ GPU stack: `requirements-gpu.txt` (install a matching `torch` CUDA build first).
 See [CITATION.cff](CITATION.cff). Please also cite the paper and the Zenodo dataset DOI
 when using figures or regenerated products.
 
+## Publishing this repository to GitHub
+
+Local git history is initialized on `main`. After authenticating the GitHub CLI once:
+
+```bash
+cd evaluation/ascat_crps_paper_figures
+mamba run -n ghcli gh auth login -h github.com -p ssh -w
+bash push_to_github.sh
+```
+
+This creates the public repo `priftisg/ascat-crps-paper-figures` and pushes `main`.
+
 ## License
 
 - **Code** (`code/`): MIT — see [LICENSE](LICENSE)
